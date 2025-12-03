@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-// O NOME ABAIXO TEM QUE SER IGUAL AO NOME DO ARQUIVO
+// TEM QUE SER IGUAL AO NOME DO ARQUIVO
 public class DrumHit : MonoBehaviour
 {
     private AudioSource audioSource;
@@ -14,14 +14,13 @@ public class DrumHit : MonoBehaviour
         rend = GetComponent<Renderer>();
         
         if (rend != null) originalColor = rend.material.color;
-        
-        // Debug para sabermos se o script carregou
+
         Debug.Log("Script de bateria iniciado no objeto: " + gameObject.name);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // so toca com a baqueta"
+        // so toca com a baqueta
         if (other.CompareTag("Baqueta")) 
         {
             Debug.Log("Baqueta bateu!");
