@@ -82,7 +82,7 @@ public class GameManagerCores : MonoBehaviour
     }
 
     // -------------------------------------------------------------
-    // A MUDANÇA PRINCIPAL ESTÁ AQUI EMBAIXO
+    // FIX BUG BATIDA
     // -------------------------------------------------------------
     public void ProcessarBatidaJogador(int idTamborBatido, string tagBaquetaUsada)
     {
@@ -95,10 +95,10 @@ public class GameManagerCores : MonoBehaviour
         // Descobre qual cor o jogador usou (independente de estar certo ou errado)
         Color corUsadaPeloJogador = (tagBaquetaUsada == "BaquetaAzul") ? Color.blue : Color.red;
         
-        // Toca o som e mostra a cor no tambor AGORA
+        // Toca o som e mostra a cor no tambor
         listaTambores[idTamborBatido].TocarFeedback(corUsadaPeloJogador);
 
-        // 3. AGORA verificamos a lógica do jogo
+        // 3. regra do jogo
         NotaMusical notaEsperada = sequenciaCompleta[indiceAtualJogador];
 
         if (idTamborBatido == notaEsperada.idTambor && tagBaquetaUsada == notaEsperada.tagBaquetaNecessaria)
@@ -117,7 +117,7 @@ public class GameManagerCores : MonoBehaviour
         {
             // ERROU!
             Debug.Log("Errou! Game Over.");
-            // O som do Game Over vai tocar por cima do som do tambor (efeito caos)
+            // O som do Game Over vai tocar por cima do som do tambor
             GameOver();
         }
     }
