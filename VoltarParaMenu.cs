@@ -38,9 +38,6 @@ public class VoltarParaMenu : MonoBehaviour
 
     bool CheckButton(InputDeviceCharacteristics side)
     {
-        // CORREÇÃO AQUI:
-        // Especificamos explicitamente que queremos uma lista de dispositivos XR,
-        // e não do InputSystem novo.
         var devices = new List<UnityEngine.XR.InputDevice>();
         
         InputDevices.GetDevicesWithCharacteristics(side | InputDeviceCharacteristics.Controller, devices);
