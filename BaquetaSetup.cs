@@ -2,11 +2,11 @@
 
 public class BaquetaSetup : MonoBehaviour
 {
-    public Renderer baquetaEsquerda; // Arraste o cilindro da esquerda
-    public Renderer baquetaDireita;  // Arraste o cilindro da direita
+    public Renderer baquetaEsquerda;
+    public Renderer baquetaDireita;
 
-    public Material materialAzul;     // Crie/Arraste um material azul
-    public Material materialVermelho; // Crie/Arraste um material vermelho
+    public Material materialAzul; 
+    public Material materialVermelho;
 
     void Start()
     {
