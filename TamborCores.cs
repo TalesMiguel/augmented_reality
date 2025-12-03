@@ -4,8 +4,7 @@ public class TamborCores : MonoBehaviour
 {
     public int idTambor; // 0, 1 ou 2
     
-    // Referências para os DOIS tipos de gerente possíveis
-    private GameManagerCores managerCores; // Chefe da cena Simon Says
+    private GameManagerCores managerCores; // Chefe da cena Genius
     private GameManagerRitmo managerRitmo; // Chefe da cena Ritmo
     
     private AudioSource audioSource;
@@ -18,7 +17,6 @@ public class TamborCores : MonoBehaviour
         rend = GetComponent<Renderer>();
         if(rend) corOriginal = rend.material.color;
 
-        // O tambor tenta encontrar QUEM está mandando nesta cena
         managerCores = FindFirstObjectByType<GameManagerCores>();
         managerRitmo = FindFirstObjectByType<GameManagerRitmo>();
     }
