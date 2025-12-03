@@ -63,7 +63,6 @@ public class GameManagerRitmo : MonoBehaviour
 
     void IniciarFase()
     {
-        // Mostra no console o progresso (ex: Paradiddle - 1/3)
         Debug.Log($"Rudimento: {listaDeRudimentos[indiceFaseAtual].nomeRudimento} | Progresso: {repeticoesAtuais}/{repeticoesNecessarias}");
         
         turnoDoJogador = false;
@@ -97,7 +96,7 @@ public class GameManagerRitmo : MonoBehaviour
 
         timerInatividade = 0f;
 
-        // 1. Feedback Visual Imediato
+        // 1. Feedback Visual
         Color corUsada = (tagBaquetaUsada == "BaquetaAzul") ? Color.blue : Color.red;
         listaTambores[idTamborBatido].TocarFeedback(corUsada);
 
@@ -113,7 +112,6 @@ public class GameManagerRitmo : MonoBehaviour
 
         if (tamborCerto && maoCerta)
         {
-            // Acertou a nota
             indiceNotaAtual++;
 
             // Completou a sequência inteira?
@@ -166,9 +164,6 @@ public class GameManagerRitmo : MonoBehaviour
         if(audioSourceGeral && somErro) audioSourceGeral.PlayOneShot(somErro);
         
         // Zera o progresso da fase atual? 
-        // Didática Amigável: NÃO zera o repeticoesAtuais (se fez 2/3 e errou, continua 2/3).
-        // Se quiser "Hardcore", descomente a linha abaixo:
-        // repeticoesAtuais = 0; 
         
         turnoDoJogador = false;
         Invoke("IniciarFase", 1.5f);
